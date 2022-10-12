@@ -1,11 +1,16 @@
+import format from "date-fns/format";
+import getDay from "date-fns/getDay";
+
 const Post = ({post, ind}) => {
   return (
     <div className="post-div">
-      <div className="post-date">{post.datePosted}</div>
+      <div className="post-date">
+        <h3>{format(new Date(post.datePosted), "eeee, MM/dd/yyyy")}</h3>
+      </div>
       <div className="post-body">
         <div className="post-header">
-          <h3>{post.title}</h3>
-          <h4>{post.subheading}</h4>
+          <h2>{post.title}</h2>
+          <h3>{post.subheading}</h3>
         </div>
         <div className="post-content">
           <p>{post.content}</p>

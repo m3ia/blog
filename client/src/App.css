@@ -65,7 +65,7 @@ body {
 }
 
 .title-bar-div h2 {
-  color: black;
+  /* color: black; */
   font-size: 60px;
   line-height: 60%;
   letter-spacing: -3px;
@@ -86,8 +86,6 @@ body {
   scrollbar-color: rebeccapurple #F8DA3D;
   height: auto;
 }
-  
-
 
 /* POST ---------------------------------------- */
 .post-div {
@@ -98,6 +96,13 @@ body {
   width: 100%;
 }
 
+.post-header h2 {
+  font-size: 40px;
+  line-height: 60%;
+  letter-spacing: -3px;
+  background-color: #B3A36E;
+  -webkit-text-fill-color: white;
+}
 .post-date {
   border: 2px solid black;
   display: flex;
