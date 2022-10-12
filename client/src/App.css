@@ -30,8 +30,6 @@ body {
   height: 70px;
   display: flex;
   flex-direction: row;
-  /* background-color: black; */
-
 }
 
 .navbar-btn {
@@ -80,11 +78,20 @@ body {
     -1px -1px 0 #006B5E; */
   width: 60%;
 }
+
 /* POSTS CONTAINER ---------------------------------------- */
 .posts-container {
   overflow-y: scroll;
   scrollbar-color: rebeccapurple #F8DA3D;
   height: auto;
+}
+
+/* ABOUT CONTAINER ---------------------------------------- */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 /* POST ---------------------------------------- */
@@ -131,7 +138,6 @@ body {
   flex-direction: column;
   overflow-y: scroll;
   scrollbar-color: rebeccapurple #F8DA3D;
-  /* width: 100%; */
   max-height: 75%;
   margin-bottom: 20px;
 }

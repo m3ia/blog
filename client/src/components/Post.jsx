@@ -1,5 +1,4 @@
 import format from "date-fns/format";
-import getDay from "date-fns/getDay";
 
 const Post = ({post, ind}) => {
   return (

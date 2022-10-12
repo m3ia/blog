@@ -1,5 +1,6 @@
 import NavBar from "./NavBar";
 import Post from "./Post";
+import About from "./About";
 import {useState, useEffect} from "react";
 
 const Blog = () => {
@@ -28,7 +29,6 @@ const Blog = () => {
               dateEdited: item.date_edited,
               dateCreated: item.date_created,
             };
-
             postsArr.push(postObject);
           }
 
@@ -54,6 +54,7 @@ const Blog = () => {
             </div>
           </>
         )}
+        {view === "about" && <About />}
       </div>
     </>
   );
