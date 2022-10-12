@@ -2,6 +2,7 @@ import NavBar from "./NavBar";
 import Post from "./Post";
 import About from "./About";
 import Contact from "./Contact";
+import NewPostForm from "./NewPostForm";
 import {useState, useEffect} from "react";
 
 const Blog = () => {
@@ -57,6 +58,7 @@ const Blog = () => {
         )}
         {view === "about" && <About />}
         {view === "contact" && <Contact />}
+        {view === "newPost" && <NewPostForm />}
       </div>
     </>
   );

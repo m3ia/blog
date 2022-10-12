@@ -99,7 +99,7 @@ body {
   display: flex;
   flex-direction: row;
   margin-top: -2px;
-  max-height: 350px;
+  max-height: 450px;
   width: 100%;
 }
 
@@ -110,6 +110,7 @@ body {
   background-color: #B3A36E;
   -webkit-text-fill-color: white;
 }
+
 .post-date {
   border: 2px solid black;
   display: flex;
@@ -140,4 +141,8 @@ body {
   scrollbar-color: rebeccapurple #F8DA3D;
   max-height: 75%;
   margin-bottom: 20px;
+}
+
+.post-img {
+  max-height: 500px;
 }

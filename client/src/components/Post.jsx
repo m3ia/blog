@@ -12,6 +12,9 @@ const Post = ({post, ind}) => {
           <h3>{post.subheading}</h3>
         </div>
         <div className="post-content">
+          <p>
+            <img className="post-img" src={post.photo} alt="post"></img>
+          </p>
           <p>{post.content}</p>
         </div>
       </div>
