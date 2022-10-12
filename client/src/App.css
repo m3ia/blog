@@ -5,6 +5,7 @@ body {
   flex-direction: column;
   margin: 0;
   justify-content: center;
+  background-color: #F8DA3D;
 }
 
 /* Entire App */
@@ -19,11 +20,52 @@ body {
   padding: 0px 0px 0px 0px;
 }
 
+/* NAVBAR ---------------------------------------- */
+.navbar-container {
+  border: 2px solid black;
+  margin-top: 0px;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background-color: white;
+  height: 60px;
+}
 /* TITLE ---------------------------------------- */
 .title-bar-div {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 50px;
+  margin-top: 400px;
+  top: 100px;
+  max-width: 100%;
+}
+
+.title-bar-div h1 {
+  font-size: 150px;
+  line-height: 80%;
+  letter-spacing: -6px;
+}
+
+.title-bar-div h2 {
+  color: black;
+  font-size: 60px;
+  line-height: 80%;
+  letter-spacing: -3px;
+  margin-top: -60px;
+  background-color: #B3A36E;
+  -webkit-text-fill-color: white;
+      /* Will override color (regardless of order) */
+      /* -webkit-text-stroke: 1px black; */
+  /* text-shadow: -1px 1px 0 #006B5E,
+    1px 1px 0 #006B5E,
+    1px -1px 0 #006B5E,
+    -1px -1px 0 #006B5E; */
+  width: 60%;
+}
+/* POSTS CONTAINER ---------------------------------------- */
+.posts-container {
+  overflow-y: scroll;
+  height: auto;
 }
 /* POST ---------------------------------------- */
 .post-div {

@@ -3,16 +3,19 @@ import Post from "./Post";
 
 const Blog = () => {
   return (
-    <div className="container">
+    <>
       <NavBar />
-      <div className="title-bar-div">
-        <h1>Meia's Title</h1>
-        <h2>Meia's subheader</h2>
+      <div className="container">
+        <div className="title-bar-div">
+          <h1>Meia's Consumerisms</h1>
+          <h2>THIS IS THE SUBHEADER & HELLOO TO THE SECOND LINE</h2>
+        </div>
+        <div className="posts-container">
+          <Post />
+          <Post />
+        </div>
       </div>
-      <div className="posts-container">
-        <Post />
-      </div>
-    </div>
+    </>
   );
 };
 
