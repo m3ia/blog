@@ -27,8 +27,17 @@ body {
   position: fixed;
   width: 100%;
   top: 0px;
-  background-color: white;
-  height: 60px;
+  background-color: #F8DA3D;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+}
+.navbar-btn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid black;
+  padding-left: 10px;
 }
 /* TITLE ---------------------------------------- */
 .title-bar-div {

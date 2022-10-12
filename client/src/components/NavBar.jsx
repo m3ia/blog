@@ -1,7 +1,18 @@
 const NavBar = () => {
   return (
     <div className="navbar-container">
-      <h3>This is the navbar</h3>
+      <div className="navbar-btn">
+        <h2>Blog</h2>
+      </div>
+      <div className="navbar-btn">
+        <h2>About</h2>
+      </div>
+      <div className="navbar-btn">
+        <h2>Contact</h2>
+      </div>
+      <div className="navbar-btn">
+        <h2>New Post</h2>
+      </div>
     </div>
   );
 };
