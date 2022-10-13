@@ -288,9 +288,7 @@ p {
 .post-content {
   display: flex;
   flex-direction: column;
-  /* overflow-y: scroll; */
   scrollbar-color: rebeccapurple #F8DA3D;
-  /* max-height: 75%; */
   margin-bottom: 20px;
   background-color: rgb(229, 220, 201);
   padding: 20px;
@@ -305,4 +303,19 @@ p {
 }
 .post-img {
   max-height: 500px;
+}
+
+.post-content .post-btns {  
+  visibility: hidden;
+}
+
+.post-content:hover .post-btns {
+  display: flex;
+  flex-direction: row-reverse;
+  visibility: visible;
+}
+
+.material-symbols-outlined {
+  margin: 10px;
+  font-size: 30px;
 }

@@ -19,6 +19,10 @@ const Post = ({post, ind}) => {
             <br />
             {post.content}
           </p>
+          <div className="post-btns">
+            <span class="material-symbols-outlined">delete</span>
+            <span class="material-symbols-outlined">edit</span>
+          </div>
         </div>
       </div>
     </div>
