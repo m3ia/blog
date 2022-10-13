@@ -9,13 +9,16 @@ const Post = ({post, ind}) => {
       <div className="post-body">
         <div className="post-header">
           <h2>{post.title}</h2>
-          <h3>{post.subheading}</h3>
         </div>
         <div className="post-content">
-          <p>
+          <p className="img-p">
             <img className="post-img" src={post.photo} alt="post"></img>
           </p>
-          <p>{post.content}</p>
+          <p>
+            <span className="subheading">{post.subheading}</span>
+            <br />
+            {post.content}
+          </p>
         </div>
       </div>
     </div>
