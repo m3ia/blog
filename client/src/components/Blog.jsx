@@ -56,8 +56,24 @@ const Blog = () => {
             </div>
           </>
         )}
-        {view === "about" && <About />}
-        {view === "contact" && <Contact />}
+        {view === "about" && (
+          <>
+            <div className="title-bar-div-alt">
+              <h1>Meia's Consumerisms</h1>
+              <h2>THIS IS THE SUBHEADER & HELLOO TO THE SECOND LINE</h2>
+            </div>
+            <About />
+          </>
+        )}
+        {view === "contact" && (
+          <>
+            <div className="title-bar-div-alt">
+              <h1>Meia's Consumerisms</h1>
+              <h2>THIS IS THE SUBHEADER & HELLOO TO THE SECOND LINE</h2>
+            </div>
+            <Contact />
+          </>
+        )}
         {view === "newPost" && <NewPostForm />}
       </div>
     </>

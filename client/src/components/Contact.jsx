@@ -15,17 +15,15 @@ const Contact = () => {
     <>
       <div className="contact-container">
         <h2>Contact Me:</h2>
-        <p>
-          <ul>
-            {contacts.map((contact, ind) => {
-              return (
-                <li>
-                  <a href={contact.link}>{contact.type}</a>
-                </li>
-              );
-            })}
-          </ul>
-        </p>
+        <ul>
+          {contacts.map((contact, ind) => {
+            return (
+              <li key={ind}>
+                <a href={contact.link}>{contact.type}</a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </>
   );
