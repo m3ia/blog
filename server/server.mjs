@@ -18,7 +18,7 @@ app.get('/', (req, res) => res.json('Welcome to the API'));
 // GET - All Posts --------------------------------------------------------
 app.get('/posts', async function (req, res) {
   try {
-    const posts = await db.any('SELECT * FROM posts');
+    const posts = await db.any('SELECT * FROM posts ORDER BY id DESC');
     res.send(posts);
   } catch (e) {
     return res.status(400).json({ e });
@@ -45,3 +45,21 @@ app.get('/contacts', async function (req, res) {
   }
 });
 
+// POST - All Contacts --------------------------------------------------------
+app.post('/newpost', async function (req, res) {
+  const reqPost = {
+    title: req.body.title,
+    subheading: req.body.subheading,
+    content: req.body.content,
+    photo: req.body.content
+  }
+
+  const published = true;
+
+  try {
+    await db.any('INSERT INTO posts (title, subheading, content, photo, published, date_posted) VALUES ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP)', [reqPost.title, reqPost.subheading, reqPost.content, reqPost.photo, published]);
+    res.sendStatus(204);
+  } catch (e) {
+    return res.status(400).json({ e });
+  }
+});
