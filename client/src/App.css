@@ -167,6 +167,7 @@ p {
   padding-left: 10px;
   padding-top: 12px;
   padding-bottom: 12px;
+  word-wrap: break-word;
 }
 
 .post-subheading-input {
@@ -247,6 +248,7 @@ p {
   line-height: 40px;
   background-color: white;
   -webkit-text-fill-color: #B3A36E;
+  word-wrap: break-word;
 }
 
 /* Post subheading */
@@ -312,6 +314,7 @@ p {
 }
 .post-img {
   max-height: 500px;
+  max-width: 500px;
 }
 
 .post-content .post-btns {  

@@ -1,4 +1,5 @@
 import format from "date-fns/format";
+import {Interweave} from "interweave";
 
 const Post = ({post, setView, setEditedPost}) => {
   const clickEdit = (post) => {
@@ -20,11 +21,12 @@ const Post = ({post, setView, setEditedPost}) => {
               <img className="post-img" src={post.photo} alt="post"></img>
             )}
           </p>
-          <p>
-            <span className="subheading">{post.subheading}</span>
+          <div>
+            <div className="subheading">{post.subheading}</div>
             <br />
-            {post.content}
-          </p>
+
+            <Interweave content={post.content} />
+          </div>
           <div className="post-btns">
             <span className="material-symbols-outlined">delete</span>
             <span
