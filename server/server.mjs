@@ -83,3 +83,16 @@ app.patch('/editPost/:id', async (req, res) => {
     return res.status(400).json({ e });
    }
 })
+
+// DELETE - Delete A Single Post --------------------------------------------------------
+app.delete('/posts/:id', async function (req, res) {
+  const postId = req.params.id;
+
+  try {
+    await db.none('DELETE FROM posts WHERE id = $1', [postId]);
+    res.sendStatus(204);
+  } catch (e) {
+    console.log('delete did not work. error: ', e);
+    return res.sendStatus(400).json({ e });
+  }
+});

@@ -66,6 +66,7 @@ const Blog = () => {
                       post={post}
                       setView={setView}
                       setEditedPost={setEditedPost}
+                      getPosts={getPosts}
                     />
                   );
                 })}

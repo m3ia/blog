@@ -1,10 +1,21 @@
 import format from "date-fns/format";
 import {Interweave} from "interweave";
 
-const Post = ({post, setView, setEditedPost}) => {
+const Post = ({post, setView, setEditedPost, getPosts}) => {
   const clickEdit = (post) => {
     setView("editPost");
     setEditedPost(post);
+  };
+
+  const deletePost = async (id) => {
+    await fetch(`http://localhost:8080/posts/${id}`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+    getPosts();
   };
   return (
     <div className="post-div">
@@ -28,7 +39,11 @@ const Post = ({post, setView, setEditedPost}) => {
             <Interweave content={post.content} />
           </div>
           <div className="post-btns">
-            <span className="material-symbols-outlined">delete</span>
+            <span
+              className="material-symbols-outlined"
+              onClick={() => deletePost(post.id)}>
+              delete
+            </span>
             <span
               className="material-symbols-outlined"
               onClick={() => clickEdit(post)}
