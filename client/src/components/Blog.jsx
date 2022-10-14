@@ -52,8 +52,8 @@ const Blog = () => {
       <NavBar setView={setView} />
       <div className="container">
         <div className="title-bar-div">
-          <h1>Meia's Consumerisms</h1>
-          <h2>THIS IS THE SUBHEADER & HELLOO TO THE SECOND LINE</h2>
+          <h1>GWOAT</h1>
+          <h2>Greatest Women of All Time</h2>
         </div>
         <div className="interactive-view">
           {view === "blog" && (

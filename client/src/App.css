@@ -81,16 +81,11 @@ p {
 .title-bar-div {
   display: flex;
   flex-direction: column;
-  padding-top: 10rem;
-  top: 100px;
+  padding-top: 3rem;
   max-width: 100%;
   text-transform: uppercase;
-}
-
-.title-bar-div-alt {
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
+  word-wrap: break-word;
+  min-width: 500px;
 }
 
 /* CONTAINER ---------------------------------------- */
@@ -105,7 +100,7 @@ p {
 
 .interactive-view {
   display: flex;
-  padding: 10rem;
+  padding: 2rem;
 }
 
 /* POSTS CONTAINER ---------------------------------------- */
@@ -249,6 +244,7 @@ p {
   background-color: white;
   -webkit-text-fill-color: #B3A36E;
   word-wrap: break-word;
+  text-transform: uppercase;
 }
 
 /* Post subheading */
