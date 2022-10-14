@@ -26,8 +26,8 @@ h2 {
   /* line-height: 60%; */
   /* letter-spacing: -3px; */
   /* margin-top: -60px; */
-  background-color: #B3A36E;
-  -webkit-text-fill-color: white;
+  background-color: white;
+  -webkit-text-fill-color: #B3A36E;
   width: 60%;
 }
 
@@ -57,6 +57,8 @@ p {
   height: 70px;
   display: flex;
   flex-direction: row;
+  min-width: 100%;
+  max-width: 100%;
 }
 
 .navbar-btn {
@@ -79,12 +81,10 @@ p {
 .title-bar-div {
   display: flex;
   flex-direction: column;
-  padding: 50px;
-  /* margin-top: 500px; */
+  padding-top: 10rem;
   top: 100px;
   max-width: 100%;
   text-transform: uppercase;
-  border-bottom: 2px solid black;
 }
 
 .title-bar-div-alt {
@@ -99,11 +99,17 @@ p {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin-right: 10rem;
+  margin-left: 10rem;
 }
+
+.interactive-view {
+  display: flex;
+  padding: 10rem;
+}
+
 /* POSTS CONTAINER ---------------------------------------- */
 .posts-container {
-  overflow-y: scroll;
-  scrollbar-color: rebeccapurple #F8DA3D;
   height: auto;
 }
 
@@ -273,6 +279,9 @@ p {
   background-color: #B3A36E;
   -webkit-text-fill-color: white;
   width: 60%;
+  word-wrap: break-word;
+  max-width: 300px;
+  min-width: 300px;
 }
 
 .post-body {

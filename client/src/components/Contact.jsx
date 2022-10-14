@@ -14,7 +14,7 @@ const Contact = () => {
   return (
     <>
       <div className="contact-container">
-        <h2>Contact Me:</h2>
+        <h1>Contact Me:</h1>
         <ul>
           {contacts.map((contact, ind) => {
             return (

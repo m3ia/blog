@@ -1,46 +1,50 @@
-import {useState} from "react";
-const NewPostForm = ({setView, getPosts}) => {
-  const [newPost, setNewPost] = useState({
-    title: "",
-    subheading: "",
-    content: "",
-    photo: "",
-  });
+const EditPostForm = ({getPosts, editedPost, setEditedPost, setView}) => {
+  // const [newPost, setNewPost] = useState({
+  //   title: "",
+  //   subheading: "",
+  //   content: "",
+  //   photo: "",
+  // });
 
-  const addNewPost = async (e) => {
+  // edited
+  const submitEditedPost = async (e) => {
     e.preventDefault();
 
-    await fetch("http://localhost:8080/newpost", {
-      method: "POST",
+    const postId = editedPost.id;
+    setEditedPost((prev) => setEditedPost({...prev, id: postId}));
+
+    await fetch(`http://localhost:8080/editPost/${postId}`, {
+      method: "PATCH",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newPost),
+      body: JSON.stringify(editedPost),
     });
 
+    console.log("edited post", editedPost);
     getPosts();
-    setNewPost({
+    setView("blog");
+    setEditedPost({
+      id: "",
       title: "",
       subheading: "",
       content: "",
       photo: "",
     });
-    setView("blog");
   };
 
   return (
     <div className="new-post-form-div">
-      <h1>Add a New Post</h1>
+      <h1>Edit Post</h1>
       <div className="post-form-input-divs">
         <input
           className="post-title-input"
           type="text"
           id="add-title"
-          value={newPost.title}
-          placeholder="Add a title"
+          value={editedPost.title}
           onChange={(e) => {
-            setNewPost((prev) => ({
+            setEditedPost((prev) => ({
               ...prev,
               title: e.target.value,
             }));
@@ -52,10 +56,9 @@ const NewPostForm = ({setView, getPosts}) => {
           className="post-subheading-input"
           type="text"
           id="add-subheading"
-          value={newPost.subheading}
-          placeholder="Add a subheading"
+          value={editedPost.subheading}
           onChange={(e) => {
-            setNewPost((prev) => ({
+            setEditedPost((prev) => ({
               ...prev,
               subheading: e.target.value,
             }));
@@ -67,10 +70,9 @@ const NewPostForm = ({setView, getPosts}) => {
           className="post-content-textarea"
           type="text"
           id="add-content"
-          value={newPost.content}
-          placeholder="Add content here"
+          value={editedPost.content}
           onChange={(e) => {
-            setNewPost((prev) => ({
+            setEditedPost((prev) => ({
               ...prev,
               content: e.target.value,
             }));
@@ -82,21 +84,20 @@ const NewPostForm = ({setView, getPosts}) => {
           className="post-photo-input"
           type="text"
           id="add-photo"
-          value={newPost.photo}
-          placeholder="Photo URL"
+          value={editedPost.photo}
           onChange={(e) => {
-            setNewPost((prev) => ({
+            setEditedPost((prev) => ({
               ...prev,
               photo: e.target.value,
             }));
           }}
         />
       </div>
-      <div className="form-submit-btn" onClick={(e) => addNewPost(e)}>
+      <div className="form-submit-btn" onClick={(e) => submitEditedPost(e)}>
         <h3>Submit</h3>
       </div>
     </div>
   );
 };
 
-export default NewPostForm;
+export default EditPostForm;
