@@ -45,7 +45,6 @@ const Blog = () => {
     await fetch("http://localhost:8080/posts")
       .then((res) => res.json())
       .then((res) => {
-        console.log("res", res);
         let postsArr = [];
         for (let item of res) {
           let postObject = {
