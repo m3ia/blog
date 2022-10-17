@@ -18,7 +18,7 @@ const Blog = () => {
     photo: "",
   });
   // const [currentPage, setCurrentPage] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
   const [firstItemInd, setFirstItemInd] = useState(0);
   // const [lastItemInd, setLastItemInd] = useState(firstItemInd + itemsPerPage);
 
@@ -102,26 +102,28 @@ const Blog = () => {
                       Next Page
                     </div>
                   ) : null}
-                  <div className="items-num-options">
-                    Show
-                    <div
-                      className="items-num-option"
-                      onClick={() => updateItemsPerPage(5)}>
-                      5
+                  {posts.length > 0 ? (
+                    <div className="items-num-options">
+                      Show
+                      <div
+                        className="items-num-option"
+                        onClick={() => updateItemsPerPage(5)}>
+                        5
+                      </div>
+                      |
+                      <div
+                        className="items-num-option"
+                        onClick={() => updateItemsPerPage(10)}>
+                        10
+                      </div>
+                      |
+                      <div
+                        className="items-num-option"
+                        onClick={() => updateItemsPerPage(15)}>
+                        15
+                      </div>
                     </div>
-                    |
-                    <div
-                      className="items-num-option"
-                      onClick={() => updateItemsPerPage(10)}>
-                      10
-                    </div>
-                    |
-                    <div
-                      className="items-num-option"
-                      onClick={() => updateItemsPerPage(15)}>
-                      15
-                    </div>
-                  </div>
+                  ) : null}
                   {firstItemInd >= itemsPerPage ? (
                     <div className="pagination-btn" onClick={previousPage}>
                       Previous Page
