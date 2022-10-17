@@ -17,6 +17,30 @@ const Blog = () => {
     content: "",
     photo: "",
   });
+  // const [currentPage, setCurrentPage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [firstItemInd, setFirstItemInd] = useState(0);
+  // const [lastItemInd, setLastItemInd] = useState(firstItemInd + itemsPerPage);
+
+  // Pagination click handlers
+  const nextPage = () => {
+    setFirstItemInd(firstItemInd + itemsPerPage);
+    // setLastItemInd(lastItemInd + itemsPerPage);
+    window.scrollTo(0, 0);
+  };
+
+  const previousPage = () => {
+    setFirstItemInd(firstItemInd - itemsPerPage);
+    // setLastItemInd(lastItemInd - itemsPerPage);
+    window.scrollTo(0, 0);
+  };
+
+  const updateItemsPerPage = (num) => {
+    setItemsPerPage(num);
+    setFirstItemInd(0);
+    window.scrollTo(0, 0);
+  };
+
   const getPosts = async () => {
     await fetch("http://localhost:8080/posts")
       .then((res) => res.json())
@@ -59,17 +83,52 @@ const Blog = () => {
           {view === "blog" && (
             <>
               <div className="posts-container">
-                {posts.map((post, ind) => {
-                  return (
-                    <Post
-                      key={ind}
-                      post={post}
-                      setView={setView}
-                      setEditedPost={setEditedPost}
-                      getPosts={getPosts}
-                    />
-                  );
-                })}
+                {posts
+                  .map((post, ind) => {
+                    return (
+                      <Post
+                        key={ind}
+                        post={post}
+                        setView={setView}
+                        setEditedPost={setEditedPost}
+                        getPosts={getPosts}
+                      />
+                    );
+                  })
+                  .slice(firstItemInd, firstItemInd + itemsPerPage)}
+                <div className="pagination-btns">
+                  {firstItemInd + itemsPerPage + itemsPerPage <=
+                  posts.length ? (
+                    <div className="pagination-btn" onClick={nextPage}>
+                      Next Page
+                    </div>
+                  ) : null}
+                  <div className="items-num-options">
+                    Show
+                    <div
+                      className="items-num-option"
+                      onClick={() => updateItemsPerPage(5)}>
+                      5
+                    </div>
+                    |
+                    <div
+                      className="items-num-option"
+                      onClick={() => updateItemsPerPage(10)}>
+                      10
+                    </div>
+                    |
+                    <div
+                      className="items-num-option"
+                      onClick={() => updateItemsPerPage(15)}>
+                      15
+                    </div>
+                  </div>
+                  {firstItemInd >= itemsPerPage ? (
+                    <div className="pagination-btn" onClick={previousPage}>
+                      Previous Page
+                    </div>
+                  ) : null}
+                </div>
               </div>
             </>
           )}
